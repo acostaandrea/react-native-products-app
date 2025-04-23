@@ -19,7 +19,7 @@ const ThemedButton = ({ children, icon, ...rest }: Props) => {
 
     const primaryColor = useThemeColor({}, "primary");
   return (
-    <Pressable style={({pressed})=> [
+    <Pressable {...rest} style={({pressed})=> [
         {
             backgroundColor: pressed ? primaryColor+'90' : primaryColor,
         },
