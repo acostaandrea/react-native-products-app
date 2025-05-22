@@ -29,18 +29,17 @@ const returnUserToken= (data: AuthResponse): {
     }
 };
 
-export const authLogin= async (email:string, password:string)=> {
-    email= email.toLowerCase();
-    try {
-        const {data} = await productsApi.post<AuthResponse>('/auth/login', {email, password});
-
-        return returnUserToken(data);
-        
-    } catch (error) {
-        console.log(error)
-        return null;
-        
-    }
+// In auth-actions.ts
+export const authLogin = async (email: string, password: string) => {
+  email = email.toLowerCase();
+  try {
+    const response = await productsApi.post<AuthResponse>('/auth/login', { email, password });
+    
+    return returnUserToken(response.data);
+  } catch (error) {
+    console.error('Login error:', error);
+    return null;
+  }
 }
 
 export const authCheckStatus = async()=>{

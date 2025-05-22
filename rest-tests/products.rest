@@ -1,0 +1,2 @@
+GET http://localhost:3000/api/products?limit=20&offset=20
+Content-Type: application/json
