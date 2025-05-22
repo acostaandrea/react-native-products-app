@@ -1,2 +1,7 @@
 GET http://localhost:3000/api/products?limit=20&offset=20
 Content-Type: application/json
+
+
+### GET PRODUCT BY ID
+GET http://localhost:3000/api/products/8b700b21-29c9-4d20-8dac-10da0eb7d0fe
+Content-Type: application/json
